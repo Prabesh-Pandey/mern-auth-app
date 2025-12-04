@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
-export const authMiddleware = (req , res, next) => {
-    const token = req.cookies?.token;
+module.exports.authMiddleware = (req, res, next) => {
+    const token = req.cookies && req.cookies.token;
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized: No token provided' });
     }

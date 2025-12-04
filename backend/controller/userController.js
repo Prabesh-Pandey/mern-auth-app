@@ -1,7 +1,7 @@
 
-export const profile = (req, res) => {
+module.exports.profile = (req, res) => {
     return res.json({
         message: 'User profile fetched successfully',
-        user: req.user
+        user: req.user,
     });
 };
